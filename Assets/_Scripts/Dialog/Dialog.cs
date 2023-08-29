@@ -49,7 +49,7 @@ namespace Dialog
                     cs[i] = new Card(nameof(NPCIcon), Parent.transform)
                           .SetImageSprite(sprites[i])
                           .SetImageSize(Vector3.one * 2f)
-                          .SetImagePosition(new Vector3(-Cam.OrthoX + .75f, Cam.OrthoY - .75f))
+                          .SetImagePosition(new Vector3(-Cam.MainOrthoX + .75f, Cam.MainOrthoY - .75f))
                           .SetImageColor(col)
                           .SetCanvasSortingOrder(i + 11);
                 }

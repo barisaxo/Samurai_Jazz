@@ -4,7 +4,6 @@ using Batterie;
 using MusicTheory.Rhythms;
 using System;
 
-
 //TODOTODOTODO rhythm puzzle: find the '1'
 //perform this rhythm to unlock *que music*: (Q)SSL 
 

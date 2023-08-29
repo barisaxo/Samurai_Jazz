@@ -115,7 +115,10 @@ namespace Batterie
             }
         }
 
-        void FeedbackDebug(string s) => Debug.Log(s);
+        void FeedbackDebug(string s)
+        {
+            //Debug.Log(s);
+        }
         public void Start() { StartTime = realTime = dspTime = AudioSettings.dspTime; }
         public void Tick()
         {

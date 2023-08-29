@@ -21,8 +21,8 @@ namespace Menus
         private Card _itemDescription;
         public Card ItemDescription => _itemDescription ??= new Card(nameof(ItemDescription), Parent)
             .SetFontScale(.6f, .6f)
-            .SetTMPPosition(0, -Cam.OrthoY * .5f)
-            .SetTMPSize(Cam.OrthoX * 1.7f, 1)
+            .SetTMPPosition(0, -Cam.MainOrthoY * .5f)
+            .SetTMPSize(Cam.MainOrthoX * 1.7f, 1)
             .AllowWordWrap(false)
             .AutoSizeFont(true);
 

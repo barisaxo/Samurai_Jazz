@@ -58,9 +58,11 @@ public class Card
             TextMeshProUGUI SetUpTMP()
             {
                 TextMeshProUGUI t = new GameObject(Name + nameof(TMP)).AddComponent<TextMeshProUGUI>();
+                t.gameObject.layer = 5;
                 t.transform.SetParent(Parent != null ? Parent : Canvas.transform, true);
                 t.fontSizeMin = 8;
                 t.fontSizeMax = 300;
+                t.rectTransform.localScale = Vector3.one;
                 return t;
             }
         }
@@ -75,7 +77,9 @@ public class Card
             Image SetUpImage()
             {
                 Image i = new GameObject(Name + nameof(Image)).AddComponent<Image>();
+                i.gameObject.layer = 5;
                 i.transform.SetParent(Parent != null ? Parent : Canvas.transform, true);
+                i.rectTransform.localScale = Vector3.one;
                 i.sprite = null;
                 return i;
             }
@@ -91,8 +95,10 @@ public class Card
             Canvas SetUpCanvas()
             {
                 Canvas canvas = new GameObject(Name + nameof(Canvas)).AddComponent<Canvas>();
+                canvas.gameObject.layer = 5;
                 canvas.transform.SetParent(GO.transform, false);
-                canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                canvas.renderMode = RenderMode.ScreenSpaceCamera;
+                canvas.worldCamera = Cam.Io.UICamera;
                 canvas.sortingOrder = 0;
                 if (_canvasScaler == null) _canvasScaler = SetUpCanvasScaler(canvas);
                 return canvas;
@@ -116,7 +122,7 @@ public class Card
         CanvasScaler cs = canvas.gameObject.AddComponent<CanvasScaler>();
         cs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         cs.matchWidthOrHeight = 1;
-        cs.referenceResolution = new Vector2(Cam.Io.Camera.pixelWidth, Cam.Io.Camera.pixelHeight);
+        cs.referenceResolution = new Vector2(Cam.Io.UICamera.pixelWidth, Cam.Io.UICamera.pixelHeight);
         return cs;
     }
 

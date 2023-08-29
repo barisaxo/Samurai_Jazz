@@ -16,10 +16,8 @@ namespace Audio
         private bool _muted;
         private GameObject _parent;
         private float _volumeLevelSetting = .6f;
-        protected double dspTime;
-        protected double realTime;
         public bool Running;
-        protected double NextEventTime { get; set; }
+        protected double NextEventTime;
 
         private void Destruct()
         {

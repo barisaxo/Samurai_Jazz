@@ -32,7 +32,7 @@ namespace SheetMusic
         public Card BackGround => _bg ??= new Card(nameof(BackGround), Parent)
             .SetImageSprite(Assets.White)
             .SetImageColor(new Color(0, 0, 0, .65f))
-            .SetImageSize(new Vector3(Cam.OrthoX * 2, Cam.OrthoY * 2))
+            .SetImageSize(new Vector3(Cam.MainOrthoX * 2, Cam.MainOrthoY * 2))
             .SetCanvasSortingOrder(0)
             .SetImagePosition(new Vector3(0, 0, 3));
     }

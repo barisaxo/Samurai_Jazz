@@ -95,7 +95,7 @@ public static class CardSystems
     public static Card SetTMPSize(this Card Card, Vector2 v)
     {
         Card.TMP.rectTransform.sizeDelta =
-            .5f * Card.CanvasScaler.referenceResolution.y * v / Cam.Io.Camera.orthographicSize;
+            .5f * Card.CanvasScaler.referenceResolution.y * v / Cam.Io.UICamera.orthographicSize;
         return Card;
     }
 
@@ -112,9 +112,9 @@ public static class CardSystems
     /// </summary>
     public static Card SetTMPPosition(this Card Card, Vector3 v)
     {
-        Vector2 spos = Cam.Io.Camera.WorldToScreenPoint(v);
-        var ssize = new Vector2(Cam.Io.Camera.pixelWidth, Cam.Io.Camera.pixelHeight);
-
+        Vector2 spos = Cam.Io.UICamera.WorldToScreenPoint(v);
+        var ssize = new Vector2(Cam.Io.UICamera.pixelWidth, Cam.Io.UICamera.pixelHeight);
+        //Debug.Log(spos + " " + ssize);
         Card.TMP.rectTransform.localPosition = new Vector2(spos.x - ssize.x * .5f, spos.y - ssize.y * .5f);
         return Card;
     }
@@ -158,8 +158,8 @@ public static class CardSystems
 
     public static Card SetImagePosition(this Card Card, Vector3 pos)
     {
-        Vector2 spos = Cam.Io.Camera.WorldToScreenPoint(pos);
-        var ssize = new Vector2(Cam.Io.Camera.pixelWidth, Cam.Io.Camera.pixelHeight);
+        Vector2 spos = Cam.Io.UICamera.WorldToScreenPoint(pos);
+        var ssize = new Vector2(Cam.Io.UICamera.pixelWidth, Cam.Io.UICamera.pixelHeight);
 
         Card.Image.rectTransform.localPosition = new Vector2(spos.x - ssize.x * .5f, spos.y - ssize.y * .5f);
         return Card;
@@ -183,7 +183,7 @@ public static class CardSystems
     public static Card SetImageSize(this Card Card, Vector2 v2)
     {
         Card.Image.rectTransform.sizeDelta =
-            .5f * Card.CanvasScaler.referenceResolution.y * v2 / Cam.Io.Camera.orthographicSize;
+            .5f * Card.CanvasScaler.referenceResolution.y * v2 / Cam.Io.UICamera.orthographicSize;
         return Card;
     }
 

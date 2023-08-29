@@ -7,13 +7,13 @@ public class NewBatterie_State : State
 {
     public NewBatterie_State()
     {
+
     }
 
 
 
     protected override void PrepareState(Action callback)
     {
-
         base.PrepareState(callback);
     }
 
@@ -23,9 +23,9 @@ public class NewBatterie_State : State
         {
             Time = new FourFour(),
             NumberOfMeasures = 4,
-            SubDivisionTier = SubDivisionTier.D1Only,
-            HasTies = true,
-            HasRests = false,
+            SubDivisionTier = SubDivisionTier.D1AndD2,
+            HasTies = false,
+            HasRests = true,
             HasTriplets = false,
             Tempo = 90
         };
